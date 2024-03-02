@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Anthony D. Chiaye" description="About Anthony D. Chiaye">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						From an initial training in computer science, I have evolved over the years in various tech professions. Whether as a technician, network administrator, developer, or trainer, I have gained extensive experience in the field.
+						With over 4 years of experience, I'm specialized in developing hands-on experiences with server-side JavaScript frameworks like NodeJs, Angular, frontend libraries such as React and database systems like MongoDB, MySQL, DynamoDB.
+						proficient in languages including JavaScript(es5/es6/es7/es8), TypeScript, Php.
+					</p>
+					<p>
+						Notably, I bring expertise in Web3 technologies, expanding my skillset  to include blockchain development and decentralized applications(Dapps). I have successfully integrated blockchain solutions into various project, leveraging my understanding of
+						smart contracts and decentralized protocols.
+					</p>
+					<p>
+						Having working extensively on various tech stacks, including MERN, MEAN, I bring a comprehensive skillset in software development. In addition, I also have background in managing and deploying scalable applications using cloud services such as AWS, GCP,
+						heroku and netlify. My commitment to excellence and continous learning is evident through my engagement with cutting-edge technologies, participation to hackathons, and active involvement in the vibrant tech community.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Bachelor's degree in Programming and Specific Application Programming, Diploma in Telecommunications and Networks.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Curious, creative, autonomous, organized, dynamic, versatile, team player.</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
